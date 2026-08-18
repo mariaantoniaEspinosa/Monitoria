@@ -64,6 +64,65 @@ typedef struct {
 Taluno aluno;
 ```
 
-- Lista 1 → 7
+- Lista 1 - exercício 7
+
+```c
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct tipoHorario{
+    int h;
+    int min;
+    int seg;
+};
+/*
+typedef struct{
+    int h;
+    int min;
+    int seg;
+} tipoHorario;
+*/
+int main(){
+    struct tipoHorario hora;
+    char horaLida[10];
+    char aux[3];
+    
+    printf("Digite um horario (hh:mm:ss):" );
+    scanf(" %s", horaLida);
+
+    //convertendo a hora
+    aux[0] = horaLida[0];
+    aux[1] = horaLida[1];
+    aux[2] = '\0';
+    //printf("aux = %s\n", aux);
+
+    hora.h = atoi(aux);
+    //printf("Atoi/Hora = %d\n", hora.h);
+
+    //convertendo os minutos
+    aux[0] = horaLida[3];
+    aux[1] = horaLida[4];
+    //printf("aux = %s\n", aux);
+
+    hora.min = atoi(aux);
+    //printf("Atoi/Min = %d\n", hora.min);
+
+    //convertendo os segundos
+    aux[0] = horaLida[6];
+    aux[1] = horaLida[7];
+    //printf("aux = %s");
+
+    hora.seg = atoi(aux);
+    //printf("Atoi/Seg = %d\n", hora.seg);
+
+    printf("%d horas, %d minutos, %d segundos", hora.h, hora.min, hora.seg);
+
+    return 0;
+
+}
+
+```
+
 - Exercícios
 - Modularizações (funções)
