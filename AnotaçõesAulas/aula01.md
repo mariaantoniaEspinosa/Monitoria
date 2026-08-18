@@ -116,7 +116,7 @@ int main(){
     hora.seg = atoi(aux);
     //printf("Atoi/Seg = %d\n", hora.seg);
 
-    printf("%d horas, %d minutos, %d segundos", hora.h, hora.min, hora.seg);
+    printf("%d horas, %d minutos e %d segundos", hora.h, hora.min, hora.seg);
 
     return 0;
 
