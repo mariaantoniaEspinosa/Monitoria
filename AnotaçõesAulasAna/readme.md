@@ -1,1 +1,0 @@
-# Pasta destina as anotações da aula 01 de algoritmo B - 2026/2
