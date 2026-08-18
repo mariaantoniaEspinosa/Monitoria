@@ -126,3 +126,5 @@ int main(){
 
 - Exercícios
 - Modularizações (funções)
+
+# Roteiro de aula - RICARDO
