@@ -23,6 +23,8 @@ int main(){
     auxiliar[1] = hora[1];
     auxiliar[2] = '\0'; // indica que a string terminou
 
+    // "25" → atoi() → 25
+    
     h.hora = atoi(auxiliar);
 
     //pega os minutos
