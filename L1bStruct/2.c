@@ -1,65 +1,69 @@
 #include <stdio.h>
 
-struct Aluno{
+struct Aluno {
     int matricula;
     int presenca;
 };
 
-struct Turma{
+struct Turma {
     int cod;
     int cargaHora;
     int totalAlunos;
-    char disciplina [50];
+    char disciplina[50];
     char professor[60];
     struct Aluno alunos[40];
 };
 
-int main(){
+int main() {
+    struct Turma turma[50];
+    int i, j;
+    float mediaFreq, freq;
 
-    struct Turma turma[32];
-    int i = 0;
-    float mediaFreq = 0, freq;
+    for (i = 0; i < 50; i++) {
+        mediaFreq = 0;
 
-    printf("Cod. turma: ");
-    scanf("%d", &turma[0].cod);
+        printf("\nCadastro da turma %d\n", i + 1);
 
-    printf("Carga horaria: ");
-    scanf(" %d", &turma[0].cargaHora);
+        printf("Cod. turma: ");
+        scanf("%d", &turma[i].cod);
 
-    printf("Total alunos: ");
-    scanf(" %d", &turma[0].totalAlunos);
+        printf("Carga horaria: ");
+        scanf("%d", &turma[i].cargaHora);
 
-    printf("Disciplina: ");
-    scanf(" %s", &turma[0].disciplina);
+        printf("Total alunos: ");
+        scanf("%d", &turma[i].totalAlunos);
 
-    printf("Professor: ");
-    scanf(" %s", &turma[0].professor);
+        printf("Disciplina: ");
+        scanf(" %[^\n]", turma[i].disciplina);
 
-    for(i=0; i<turma[0].totalAlunos; i++){
-        printf("Matricula %d: ", i + 1);
-        scanf(" %d", &turma[0].alunos[i].matricula);
-        printf("Total de presenca do aluno %d em horas: ", i +1);
-		scanf(" %d", &turma[0].alunos[i].presenca);
+        printf("Professor: ");
+        scanf(" %[^\n]", turma[i].professor);
+
+        for (j = 0; j < turma[i].totalAlunos; j++) {
+            printf("Matricula %d: ", j + 1);
+            scanf("%d", &turma[i].alunos[j].matricula);
+            printf("Total de presenca do aluno %d em horas: ", j + 1);
+            scanf("%d", &turma[i].alunos[j].presenca);
+        }
+
+        printf("\nDADOS DA TURMA %d\n", i + 1);
+        printf("Codigo: %d\n", turma[i].cod);
+        printf("Disciplina: %s\n", turma[i].disciplina);
+        printf("Carga Horaria: %d horas\n", turma[i].cargaHora);
+        printf("Professor: %s\n", turma[i].professor);
+        printf("Total de alunos: %d\n", turma[i].totalAlunos);
+
+        printf("\nFREQUENCIA\n");
+        for (j = 0; j < turma[i].totalAlunos; j++) {
+            freq = (turma[i].alunos[j].presenca * 100.0) / turma[i].cargaHora;
+            printf("Matricula: %d\n", turma[i].alunos[j].matricula);
+            printf("Frequencia: %.2f%%\n", freq);
+            mediaFreq += freq;
+        }
+
+        mediaFreq /= turma[i].totalAlunos;
+        printf("Frequencia media da turma: %.2f%%\n", mediaFreq);
     }
-
-    printf("DADOS\n");
-
-    printf("Codigo: %d\n", turma[0].cod);
-	printf("Disciplina: %s\n", turma[0].disciplina);
-	printf("Carga Horaria: %d horas\n", turma[0].cargaHora);
-	printf("Professor: %s\n", turma[0].professor);
-	printf("Total de alunos: %d\n", turma[0].totalAlunos);
-
-    printf("FREQUENCIA\n");
-
-    for (i=0; i<turma[0].totalAlunos; i++){
-		freq = (turma[0].alunos[i].presenca*100)/turma[0].cargaHora;
-		printf("Matricula: %d\n", turma[0].alunos[i].matricula);
-		printf("Frequencia: %.2%%\n", freq);
-		mediaFreq += freq;
-	}
-    mediaFreq = mediaFreq/turma[0].totalAlunos;
-	printf("Frequencia media da turma: %.2f%%\n", mediaFreq);
 
     return 0;
 }
