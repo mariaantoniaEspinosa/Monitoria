@@ -15,11 +15,11 @@ struct Turma {
 };
 
 int main() {
-    struct Turma turma[50];
+    struct Turma turma[2];
     int i, j;
     float mediaFreq, freq;
 
-    for (i = 0; i < 50; i++) {
+    for (i = 0; i < 2; i++) {
         mediaFreq = 0;
 
         printf("\nCadastro da turma %d\n", i + 1);
