@@ -6,3 +6,18 @@
 ## Modularização
 - Funções
 - Procedimento: não retorna valor 
+- Exemplo: 
+```c
+
+#include <stdio.h>
+void linha(){
+    printf("========\n");
+    return;
+}
+
+int main(){
+    //chamada da função
+    linha();
+}
+
+```
