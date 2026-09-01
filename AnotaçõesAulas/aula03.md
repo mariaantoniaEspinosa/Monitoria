@@ -150,3 +150,31 @@ int main(){
 	return 0;
 }
 ```
+- Exemplo de como passar valores - argumentos - para funções 
+```c
+//ARGUMENTOS - PASSANDO VALORES 
+#include <stdio.h>
+int funcao2(int x){
+	return x + 2;
+}
+
+int f(int x, char y){
+	printf("\nOs valores passados foram: %d, %c", x, y);
+}
+
+void main(void){
+	int a = 50;
+	char b = 'B';
+	f(49, 'A'); 
+	f(a, b);
+	f(a+1, b+1);
+	f(funcao2(a), b+2);
+	
+	return;
+}
+```
+- Protótipo de Funções
+- Exemplo:
+```c
+
+```
