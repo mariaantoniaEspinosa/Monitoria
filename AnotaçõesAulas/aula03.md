@@ -106,7 +106,7 @@ main(){
 ```
 # Roteiro de aula - ANA
 - Matrizes
-- Exemplo:
+- Exercício 01 da Lista 03:
 ```c
 //MATRIZES
 #include <stdio.h>
